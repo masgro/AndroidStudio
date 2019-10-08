@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/GetX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="240dp"
+        android:alpha="0.4"
+        android:background="#2196F3"
+        android:padding="5dp"
+        android:text="Aceleracion X"
+        android:textSize="10sp"
+        android:textStyle="bold|italic"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/GetY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="60dp"
+        android:alpha="0.4"
+        android:background="#2196F3"
+        android:padding="5dp"
+        android:text="Aceleracion Y"
+        android:textColorHint="#fff"
+        android:textSize="10sp"
+        android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/GetZ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:alpha="0.4"
+        android:background="#2196F3"
+        android:padding="5dp"
+        android:text="Aceleracion Z"
+        android:textColorHint="#fff"
+        android:textSize="10sp"
+        android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/GetLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="140dp"
+        android:alpha="0.4"
+        android:background="#2196F3"
+        android:padding="5dp"
+        android:text="Location"
+        android:textColorHint="#fff"
+        android:textSize="10sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="300dp"
+        android:text="" />
+
+
+</RelativeLayout>
