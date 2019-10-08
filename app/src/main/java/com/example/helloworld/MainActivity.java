@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public Float acc_z = 0.0f;
 
     public Double latitud = 0.0;
+    public Double longitud = 0.0;
 
     private Button simpleButton1, simpleButton2, simpleButton3, simpleButton4;
     private Sensor accelerometer;
@@ -65,10 +66,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                //textView.setText("");
-                //textView.append("\n" + location.getLatitude() + " " + location.getLongitude() + " " + location.getAltitude());
+                textView.setText("");
+                textView.append("\n" + location.getLatitude() + " " + location.getLongitude() + " " + location.getAltitude());
                 //Toast.makeText(getApplicationContext(), Double.toString(location.getLongitude()), Toast.LENGTH_LONG).show();
-                latitud = location.getLatitude();
+                //latitud = location.getLatitude();
+                //longitud = location.getLongitude();
             }
 
             @Override
@@ -85,7 +87,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             public void onProviderDisabled(String provider) {
                 Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                 startActivity(intent);
-
             }
         };
 
@@ -93,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 requestPermissions(new String[]{
                         Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.INTERNET
-
                 },10 );
                 return;
             }
@@ -101,12 +101,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             configureButton();
         }
 
-        simpleButton4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), Double.toString(latitud), Toast.LENGTH_LONG).show();
-            }
-        });
 
         simpleButton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         simpleButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                locationManager.requestLocationUpdates("gps", 5000, 1, locationListener);
+                locationManager.requestLocationUpdates("gps", 5, 1, locationListener);
             }
         });
 
